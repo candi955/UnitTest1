@@ -14,6 +14,17 @@
 # 1/9/2020 @ 16:32pm - I have begun to practice how the concept of peek works, as
 # I believe I understand the concepts of push (in python appears to be append() function) and
 # pop (appears in python is pop() function)
+# 1/9/2020 @ 20:30pm - I took several hours of broken breaks in between coding for family matters, but in between successfully
+# created a Github repository called UnitTest on my candi955 Github repository page (https://github.com/candi955/UnitTest)
+# which I have at this time set to Public, and have pushed two commits from Pycharm to the repository.  I have also
+# double checked that version control is working in Git under the Pycharm VCS menu.  At this time my success and fail
+# Unit tests under the class TestStack(), functions unitTestStackEven() and unitTestStackFail() appear to be functioning
+# properly (when the program equation result is an even number, a message displays stating the test was successful, and
+# when the result is odd, a message displays stating the test is unsuccessful).
+# I placed a reference in the code under both TestStack() class functions showing the how I came up with the idea for
+# the equation I utilized.  I also placed the reference in the formerly mentioned project references above these notes.
+# I have begun to create the actual stack under class NumStack(), which I plan to create an array to demonstrate the
+# concepts of push, pop, and peek on the First In Last Out (FILO) stack in array format.
 
 class TestStack():
     def unitTestStackEven(self):
@@ -36,12 +47,11 @@ class TestStack():
         else:
             return print("Test is not successful")
 
-
 TestStack()
 
-class numStack():
+class NumStack():
 
-    
+
 
 
 
