@@ -86,53 +86,36 @@ class NumStack():
         print("\n")
         # reference for append to stack: https://dbader.org/blog/stacks-in-python
 
-        class NumStack():
-            def _intStack_(self):
-                # reference for append to stack: https://dbader.org/blog/stacks-in-python
+    def _popStack_(self):
+        intStackLIFO = []
 
-                intStackLIFO = []
+        print("Below I will demonstrate the results of attempting to utilize the pop function on an empty stack " +
+              "LIFO data structure:\n")
 
-                intStackLIFO.append(2)
-                intStackLIFO.append(4)
 
-                print("Below I have added two numbers utilizing push(append) to the iStackLIFO stack:\n")
+
+        while True:
+            try:
+                print("Data structure before pop:")
                 print(intStackLIFO)
-                print("\n")
+                intStackLIFO.pop()
 
-                intStackLIFO.append(6)
-                intStackLIFO.append(7)
+                if intStackLIFO:
+                    print("Data structure after pop:")
+                    print(intStackLIFO)
+                    print("Test is successful, and pop was conducted utilizing an empty stack.\n")
 
-                print(
-                    "Below I have added two more numbers (four numbers total) utilizing push(append) to the iStackLIFO stack:\n")
-                print(intStackLIFO)
-                print("\n")
-                # reference for append to stack: https://dbader.org/blog/stacks-in-python
+            except ValueError:
+                print("The attempt returned an error message 'IndexError: pop from empty list'")
+            else:
+                return print("Test is successful, and pop was conducted utilizing an empty stack.\n")
 
-            def _intStack_(self):
-                # reference for append to stack: https://dbader.org/blog/stacks-in-python
+         #reference for append to stack: https://dbader.org/blog/stacks-in-python
 
-                intStackLIFO = []
-
-                intStackLIFO.append(2)
-                intStackLIFO.append(4)
-
-                print("Below I have added two numbers utilizing push(append) to the iStackLIFO stack:\n")
-                print(intStackLIFO)
-                print("\n")
-
-                intStackLIFO.append(6)
-                intStackLIFO.append(7)
-
-                print(
-                    "Below I have added two more numbers (four numbers total) utilizing push(append) to the iStackLIFO stack:\n")
-                print(intStackLIFO)
-                print("\n")
-                # reference for append to stack: https://dbader.org/blog/stacks-in-python
 
 NumStack()
 
-
-
+#_____________________________________________________________________________________________________________________
 def main():
 
     test = TestStack()
@@ -147,6 +130,10 @@ def main():
     print("\n")
 
     intStackLIFO_orig._intStack_()
+    print("\n")
+
+    intStackLIFO_orig._popStack_()
+    print("\n")
 
 main()
 
