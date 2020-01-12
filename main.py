@@ -8,9 +8,11 @@
 # for stacks and queues, push and pop:
 # https://www.geeksforgeeks.org/using-list-stack-queues-python/
 # https://dbader.org/blog/stacks-in-python
+# for pop() performance on data structure and from empty list: https://dbader.org/blog/stacks-in-python
 # for sets and frozensets: https://www.python-course.eu/sets_frozensets.php
 # for modulo: https://www.java67.com/2014/11/modulo-or-remainder-operator-in-java.html
 # https://medium.com/programminginpython-com/python-program-to-find-whether-an-integer-is-even-or-odd-number-a028da555922
+# for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
 
 # 1/9/2020 @ 16:32pm - I have begun to practice how the concept of peek works, as
 # I believe I understand the concepts of push (in python appears to be append() function) and
@@ -39,6 +41,12 @@
 # the failed function of popping from an empty data structure.  I am first going to attempt displaying this concept, and plan to
 # attempt peek later after learning how to pop the numbers in the stack.
 # I also am making another commit on Git to my Github repository.
+# 1/11/2020 @ 18:54pm - I have begun programming again, and this time, due to having trouble running the code after the
+# pop error, I'm going to place information in the print statement as guidance to the user of the program.
+# 1/11/2020 @ 19:17pm I finished my example of the pop() function performance on an empty data structure, class NumStack(),
+# function _popStack_(), and placed references in the beginning of this documentation as well as before and after the
+# written code for that section.  I am also performing another git commit and Github push.
+
 
 class TestStack():
     def unitTestStackEven(self):
@@ -89,29 +97,36 @@ class NumStack():
     def _popStack_(self):
         intStackLIFO = []
 
+        # reference for pop() performance on data structure and from empty list:
+        # https://dbader.org/blog/stacks-in-python
         print("Below I will demonstrate the results of attempting to utilize the pop function on an empty stack " +
-              "LIFO data structure:\n")
+              "LIFO data structure.\n")
 
-
+        print("Data structure before pop (is empty):")
+        print(intStackLIFO)
+        print("\n")
 
         while True:
             try:
-                print("Data structure before pop:")
-                print(intStackLIFO)
+
+                # attempting the pop function from and empty stack data structure
                 intStackLIFO.pop()
 
-                if intStackLIFO:
-                    print("Data structure after pop:")
-                    print(intStackLIFO)
-                    print("Test is successful, and pop was conducted utilizing an empty stack.\n")
+                # reference for pop() performance on data structure and from empty list:
+                # https://dbader.org/blog/stacks-in-python
 
-            except ValueError:
-                print("The attempt returned an error message 'IndexError: pop from empty list'")
+            # reference for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
+            except Exception as ex:
+                print("An error has occurred upon attempting to execute this request (performing pop on empty " +
+                "data structure:\n")
+                print(ex)
+                break
+            # reference for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
+
             else:
-                return print("Test is successful, and pop was conducted utilizing an empty stack.\n")
+                break
 
          #reference for append to stack: https://dbader.org/blog/stacks-in-python
-
 
 NumStack()
 
