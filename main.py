@@ -46,6 +46,9 @@
 # 1/11/2020 @ 19:17pm I finished my example of the pop() function performance on an empty data structure, class NumStack(),
 # function _popStack_(), and placed references in the beginning of this documentation as well as before and after the
 # written code for that section.  I am also performing another git commit and Github push.
+# 1/11/2020 @ 20:47 - I pushed the project to a new Github repository and called it UnitTest1:
+# https://github.com/candi955/UnitTest1
+# Next I am going to work on Peek() from an empty stack.
 
 
 class TestStack():
@@ -128,6 +131,49 @@ class NumStack():
 
          #reference for append to stack: https://dbader.org/blog/stacks-in-python
 
+    def _peekStack_(self):
+
+        nextIntStackLIFO = []
+
+        # reference for peek() performance on data structure and from empty list:
+        # https://dbader.org/blog/stacks-in-python
+        print("Below I will demonstrate the results of attempting to utilize the peek function on an empty stack " +
+              "LIFO data structure.\n")
+
+        print("Data structure before peek (data structure is is empty):")
+        print(nextIntStackLIFO)
+        print("\n")
+
+        nextIntStackLIFO.append(2)
+        nextIntStackLIFO.append(5)
+        nextIntStackLIFO.append(9)
+        nextIntStackLIFO.append(10)
+        print("Data structure after push of numbers, to create a stack to give examples and test the peek function:")
+        print(nextIntStackLIFO)
+        peekStack = iter(nextIntStackLIFO)
+        peek = peekStack.__next__()
+
+        print("Integer that shows as result upon initialization of the peek() function:")
+        print(list(iter([peek, peekStack])))
+
+        nextIntStackLIFO.pop(0)
+
+        print("Data structure after pop() of first number on list, to check the peek() function again:")
+        print(nextIntStackLIFO)
+
+        print("Integer that shows as result upon initialization of the peek() function, after pop() function removed " +
+        "the initial number 2 from the data structure:")
+
+        peekStack = iter(nextIntStackLIFO)
+        peek = peekStack.__next__()
+        print(list(iter([peek, peekStack])))
+
+        print("Next I will attempt to implement the peek() function on an empty data structure.")
+        print("Please see the empty stack data structure as follows:")
+
+        emptyDataStructure = []
+
+
 NumStack()
 
 #_____________________________________________________________________________________________________________________
@@ -148,6 +194,9 @@ def main():
     print("\n")
 
     intStackLIFO_orig._popStack_()
+    print("\n")
+
+    intStackLIFO_orig._peekStack_()
     print("\n")
 
 main()
