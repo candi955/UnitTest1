@@ -248,7 +248,7 @@ def main():
     test._unitTestStackEven_()
 
 
-    print("\nTest results for the even number of 3 (should fail if program functioning properly):")
+    print("\nTest results for the odd number of 3 (should fail if program functioning properly):")
     test._unitTestStackFail_()
 
 
