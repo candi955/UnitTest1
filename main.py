@@ -5,6 +5,8 @@
 # for Unit Test: https://www.jetbrains.com/pycharm/guide/tips/run-single-test/
 # for peek: https://www.jetbrains.com/pycharm/guide/tips/run-single-test/
 # https://stackoverflow.com/questions/46801747/peek-stack-in-python-3
+# reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+# https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
 # for stacks and queues, push and pop:
 # https://www.geeksforgeeks.org/using-list-stack-queues-python/
 # https://dbader.org/blog/stacks-in-python
@@ -53,6 +55,13 @@
 # made of four numbers, and then after the pop() function implemented on a new set of only the three latter numbers.
 # I then created an empty data structure, and proved that the peek() function will not show any result on implementation
 # to an empty data structure.
+# For the peek() function to work in Pycharm utilizing Python3, I had to use iter tools (I couldn't get .peek() to
+# work). The reference for this functionality that I utilized is shown at the website:
+# https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
+# 1/11/2019 @ 22:55pm - I believe to the best of my knowledge that I have fully completed all of the requirements of
+# this project, and will begin to video the project and submit.  It appears to have taken me approximately eight hours
+# to complete, totaling research, breaks, documentation, and the utilization and check on git and Github repository,
+# commits, and functionality of storage.
 
 
 class TestStack():
@@ -139,8 +148,9 @@ class NumStack():
 
         nextIntStackLIFO = []
 
-        # reference for peek() performance on data structure and from empty list:
-        # https://dbader.org/blog/stacks-in-python
+        # reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+        # first example will be with a data structure of four numbers
+        # https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
         print("Next I will demonstrate the results of attempting to utilize the peek function on a stack " +
               "LIFO data structure.")
 
@@ -155,6 +165,9 @@ class NumStack():
         print(nextIntStackLIFO)
         print("\n")
 
+        # reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+        # https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
+
         peekStack = iter(nextIntStackLIFO)
         peek = peekStack.__next__()
 
@@ -162,6 +175,10 @@ class NumStack():
               "at the first number in the stack:")
         print(list(iter([peek, peekStack])))
         print("\n")
+
+        # reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+        # https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
+
 
         nextIntStackLIFO.pop(0)
 
@@ -173,10 +190,18 @@ class NumStack():
         print("Integer that shows as result upon initialization of the peek() function, after pop() function removed " +
         "the initial number 2 from the data structure:")
 
+        # reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+        # I have 'popped' the initial number off of the data structure, to show a peek() function on an
+        # adjusted dataset of three numbers.
+        # https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
+
         peekStack = iter(nextIntStackLIFO)
         peek = peekStack.__next__()
         print(list(iter([peek, peekStack])))
         print("\n")
+
+        # reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+        # https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
 
         print("Next I will attempt to implement the peek() function on an empty data structure.")
         print("Please see the empty stack data structure as follows:")
@@ -187,14 +212,16 @@ class NumStack():
         while True:
             try:
 
-                # attempting the pop function from and empty stack data structure
+                # attempting the peek() function from and empty stack data structure
+                # reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+                # https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
 
                 peekEmptyStack = iter(emptyDataStructure)
                 peek = peekEmptyStack.__next__()
                 print(list(iter([peek, peekEmptyStack])))
 
-                # reference for pop() performance on data structure and from empty list:
-                # https://dbader.org/blog/stacks-in-python
+                # reference for peek() performance on data structure utilizing iter tools (couldn't get .peek() to work)
+                # https://stackoverflow.com/questions/2425270/how-to-look-ahead-one-element-peek-in-a-python-generator
 
             # reference for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
             except Exception as ex:
@@ -206,8 +233,6 @@ class NumStack():
 
             else:
                 break
-
-         #reference for append to stack: https://dbader.org/blog/stacks-in-python
 
 
 NumStack()
