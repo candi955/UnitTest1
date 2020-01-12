@@ -48,7 +48,11 @@
 # written code for that section.  I am also performing another git commit and Github push.
 # 1/11/2020 @ 20:47 - I pushed the project to a new Github repository and called it UnitTest1:
 # https://github.com/candi955/UnitTest1
-# Next I am going to work on Peek() from an empty stack.
+# Next I am going to work on peek() from an empty stack.
+# 1/11/2020 @ 22:39pm - I have successfully completed executing tests of the peek function with a stack data structure
+# made of four numbers, and then after the pop() function implemented on a new set of only the three latter numbers.
+# I then created an empty data structure, and proved that the peek() function will not show any result on implementation
+# to an empty data structure.
 
 
 class TestStack():
@@ -58,9 +62,9 @@ class TestStack():
         # reference for the idea of creating the below variable and equation that is intended to result in an even number:
         # https://medium.com/programminginpython-com/python-program-to-find-whether-an-integer-is-even-or-odd-number-a028da555922
         if testNum(4) % 2 == 0:
-            return print("Test is successful!\n")
+            return print("Test is successful!")
         else:
-            return print("Test is not successful\n")
+            return print("Test is not successful")
 
     def unitTestStackFail(self):
         testNum = int
@@ -68,9 +72,9 @@ class TestStack():
         # reference for the idea of creating the below variable and equation that is intended to result in an even number:
         # https://medium.com/programminginpython-com/python-program-to-find-whether-an-integer-is-even-or-odd-number-a028da555922
         if testNum(3) % 2 == 0:
-            return print("Test is successful!\n")
+            return print("Test is successful!")
         else:
-            return print("Test is not successful\n")
+            return print("Test is not successful")
 
 TestStack()
 
@@ -83,7 +87,7 @@ class NumStack():
         intStackLIFO.append(2)
         intStackLIFO.append(4)
 
-        print("Below I have added two numbers utilizing push(append) to the iStackLIFO stack:\n")
+        print("\n\nBelow I have added two numbers utilizing push(append) to the iStackLIFO stack:")
         print(intStackLIFO)
         print("\n")
 
@@ -92,9 +96,9 @@ class NumStack():
         intStackLIFO.append(6)
         intStackLIFO.append(7)
 
-        print("Below I have added two more numbers (four numbers total) utilizing push(append) to the iStackLIFO stack:\n")
+        print("Below I have added two more numbers (four numbers total) utilizing push(append) to the iStackLIFO stack:")
         print(intStackLIFO)
-        print("\n")
+
         # reference for append to stack: https://dbader.org/blog/stacks-in-python
 
     def _popStack_(self):
@@ -102,12 +106,12 @@ class NumStack():
 
         # reference for pop() performance on data structure and from empty list:
         # https://dbader.org/blog/stacks-in-python
-        print("Below I will demonstrate the results of attempting to utilize the pop function on an empty stack " +
-              "LIFO data structure.\n")
+        print("I will now demonstrate the results of attempting to utilize the pop function on an empty stack " +
+              "LIFO data structure.")
 
         print("Data structure before pop (is empty):")
         print(intStackLIFO)
-        print("\n")
+
 
         while True:
             try:
@@ -120,8 +124,8 @@ class NumStack():
 
             # reference for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
             except Exception as ex:
-                print("An error has occurred upon attempting to execute this request (performing pop on empty " +
-                "data structure:\n")
+                print("An error has occurred upon attempting to execute this request (performing pop() on an empty " +
+                "data structure):")
                 print(ex)
                 break
             # reference for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
@@ -137,29 +141,34 @@ class NumStack():
 
         # reference for peek() performance on data structure and from empty list:
         # https://dbader.org/blog/stacks-in-python
-        print("Below I will demonstrate the results of attempting to utilize the peek function on an empty stack " +
-              "LIFO data structure.\n")
-
-        print("Data structure before peek (data structure is is empty):")
-        print(nextIntStackLIFO)
-        print("\n")
+        print("Next I will demonstrate the results of attempting to utilize the peek function on a stack " +
+              "LIFO data structure.")
 
         nextIntStackLIFO.append(2)
         nextIntStackLIFO.append(5)
         nextIntStackLIFO.append(9)
         nextIntStackLIFO.append(10)
-        print("Data structure after push of numbers, to create a stack to give examples and test the peek function:")
+
+        print("I am going to first demonstrate peek() with a stack data structure containing four integers:")
+        print("Following is the created stack data structure after push of numbers, to create a stack to give " +
+              "examples and test the peek function:")
         print(nextIntStackLIFO)
+        print("\n")
+
         peekStack = iter(nextIntStackLIFO)
         peek = peekStack.__next__()
 
-        print("Integer that shows as result upon initialization of the peek() function:")
+        print("Integer that shows as result upon initialization of the peek() function. It is 'peeking' " +
+              "at the first number in the stack:")
         print(list(iter([peek, peekStack])))
+        print("\n")
 
         nextIntStackLIFO.pop(0)
 
-        print("Data structure after pop() of first number on list, to check the peek() function again:")
+        print("Data structure after pop() of first number on list.  I will use this new and updated data structure,\n " +
+              "made of three numbers, to check that the peek() function is working properly with the new set of data:")
         print(nextIntStackLIFO)
+        print("\n")
 
         print("Integer that shows as result upon initialization of the peek() function, after pop() function removed " +
         "the initial number 2 from the data structure:")
@@ -167,11 +176,38 @@ class NumStack():
         peekStack = iter(nextIntStackLIFO)
         peek = peekStack.__next__()
         print(list(iter([peek, peekStack])))
+        print("\n")
 
         print("Next I will attempt to implement the peek() function on an empty data structure.")
         print("Please see the empty stack data structure as follows:")
 
         emptyDataStructure = []
+        print(emptyDataStructure)
+
+        while True:
+            try:
+
+                # attempting the pop function from and empty stack data structure
+
+                peekEmptyStack = iter(emptyDataStructure)
+                peek = peekEmptyStack.__next__()
+                print(list(iter([peek, peekEmptyStack])))
+
+                # reference for pop() performance on data structure and from empty list:
+                # https://dbader.org/blog/stacks-in-python
+
+            # reference for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
+            except Exception as ex:
+                print("An error has occurred upon attempting to execute this request (performing peek() on an empty " +
+                "data structure).")
+                print(ex)
+                break
+            # reference for exception code: https://stackoverflow.com/questions/41596810/how-to-print-an-exception-in-python-3
+
+            else:
+                break
+
+         #reference for append to stack: https://dbader.org/blog/stacks-in-python
 
 
 NumStack()
@@ -184,11 +220,11 @@ def main():
 
     print("\nTest results for the even number of 4 (should be successful if program functioning properly):")
     test.unitTestStackEven()
-    print("\n")
+
 
     print("\nTest results for the even number of 3 (should fail if program functioning properly):")
     test.unitTestStackFail()
-    print("\n")
+
 
     intStackLIFO_orig._intStack_()
     print("\n")
