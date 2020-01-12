@@ -1,4 +1,5 @@
 # MS549 assignment: Test Driven Development
+# Github repository can be found at: https://github.com/candi955/UnitTest1
 
 # References:
 
@@ -65,7 +66,7 @@
 
 
 class TestStack():
-    def unitTestStackEven(self):
+    def _unitTestStackEven_(self):
         testNum = int
 
         # reference for the idea of creating the below variable and equation that is intended to result in an even number:
@@ -75,7 +76,7 @@ class TestStack():
         else:
             return print("Test is not successful")
 
-    def unitTestStackFail(self):
+    def _unitTestStackFail_(self):
         testNum = int
 
         # reference for the idea of creating the below variable and equation that is intended to result in an even number:
@@ -244,11 +245,11 @@ def main():
     intStackLIFO_orig = NumStack()
 
     print("\nTest results for the even number of 4 (should be successful if program functioning properly):")
-    test.unitTestStackEven()
+    test._unitTestStackEven_()
 
 
     print("\nTest results for the even number of 3 (should fail if program functioning properly):")
-    test.unitTestStackFail()
+    test._unitTestStackFail_()
 
 
     intStackLIFO_orig._intStack_()
